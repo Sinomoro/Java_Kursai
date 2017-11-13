@@ -4,6 +4,7 @@ public class Bandymas {
     {
 
         System.out.println("Hello Git?!?");
+        System.out.println("How yaa doing??");
 
     }
 
