@@ -13,4 +13,9 @@ public class Zmogus {
     {
         return this.vardas + " " +this.pavarde;
     }
+    public String getName() {return this.vardas; }
+    public String getSurname()
+    {
+        return this.pavarde;
+    }
 }
