@@ -12,15 +12,16 @@ public class U_5_1_klases {
 
 
         System.out.println("Pirma grupe : ");
-        System.out.println("   " + grupe[0].getFullName());
-        System.out.println("   " + grupe[1].getFullName());
-        System.out.println("   " + grupe[2].getFullName());
+        for(Zmogus element:grupe)
+        {
+            System.out.println("    " +  element.getFullName());
+        }
 
         System.out.println("Antroji grupe : ");
-        System.out.println("   " + grupe2[0].getFullName());
-        System.out.println("   " + grupe2[1].getFullName());
-        System.out.println("   " + grupe2[2].getFullName());
-
+        for(Zmogus element:grupe2)
+        {
+            System.out.println("    " +  element.getFullName());
+        }
 
     }
 }
