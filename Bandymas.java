@@ -1,3 +1,4 @@
+
 public class Bandymas {
     public static void main(String[] args)
     {

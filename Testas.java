@@ -1,3 +1,4 @@
+
 public class Testas {
     public static void main (String[] args )
     {
@@ -28,7 +29,7 @@ public class Testas {
     }
     private int an(int a1, int n, int d)
     {
-        int rez=0;
+        int rez;
 
         rez = n*(2*a1 +(n-1)*d)/2;
 

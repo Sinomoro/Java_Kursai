@@ -1,8 +1,8 @@
 public class U_3_1_Trikampiai
 {
-    public int[][] ilgiai = {{3,4,5},{2,10,8},{5,6,5},{5,5,5}};
+    static final int[][] ilgiai = {{3,4,5},{2,10,8},{5,6,5},{5,5,5}};
 
-    public boolean arTrikampis(int m)
+    boolean arTrikampis(int m)
     {
         int max = 0;
         int sum =0;
@@ -23,14 +23,8 @@ public class U_3_1_Trikampiai
         }
         sum-=max; //surandam trumpesnių trikampio kraštinių ilgių sumą(krastiniu suma be ilgiausios krastines)
 
-        if (sum>max)// jeigu ilgiausia kraštinė yra trumpesnė negu trumpesnių kraštinių ilgiu suma, tada kraštinės gali sudaryti trikampį
-        {
-            return true;
-        }
-        else
-        {
-            return false;
-        }
+        // jeigu ilgiausia kraštinė yra trumpesnė negu trumpesnių kraštinių ilgiu suma, tada kraštinės gali sudaryti trikampį
+        return sum > max;
     }
 
     private void koksTaiTrikampis(int m) {
