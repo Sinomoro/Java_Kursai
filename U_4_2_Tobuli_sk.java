@@ -4,7 +4,7 @@ public class U_4_2_Tobuli_sk {
         for(int i = 1; i<= 10000; i++)
         {
             int sum = 0;
-            for(int j =1; j <i; j++)
+            for(int j =1; j <= (i/2); j++)
             {
                 if(i%j == 0)
                 {
@@ -17,5 +17,6 @@ public class U_4_2_Tobuli_sk {
             }
         }
     }
+
 
 }
