@@ -41,10 +41,6 @@ public class U_3_1_Trikampiai
             System.out.println("Kraštinės nesudaro trikampio");
         }
     }
-
-
-
-
     public static void main(String[] args) {
 
         U_3_1_Trikampiai test =new U_3_1_Trikampiai();
