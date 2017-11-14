@@ -14,6 +14,7 @@ public class U_4_2_Tobuli_sk {
             if(sum == i)
             {
                 System.out.println(i);
+
             }
         }
     }
