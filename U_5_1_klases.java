@@ -1,6 +1,9 @@
 import java.util.Arrays;
 import java.util.Collections;
-
+/*
+ Pirmas vardu sarasas rusiuojamas su array.sort
+ o antras sarasas su compareto ir 3 uzsiemime parasytu rusiavimo algoritmu
+ */
 public class U_5_1_klases {
 
     private enum RusiavimoTvarka
