@@ -3,19 +3,21 @@ import java.util.Collections;
 
 public class U_5_1_klases {
 
-
-
-    public void sortas (Mokinys[] mok )
+    private enum RusiavimoTvarka
     {
-        //TODO įvest dar viena metodo argumentą, nusakantį rikiavimo tvarka, argumentas turėtų keisti @tvarka1 ir @tvarka2 kintamuosius.
+        DIDEJIMO,
+        MAZEJIMO
+    }
+
+    public void sortas (Mokinys[] mok,  RusiavimoTvarka tvarka)
+    {
+        //TODO optimizuoti rušiavimo tvarkos nustatymą.
 
         int i=0;
-        int tvarka1 = 1;
-        int tvarka2 = 0;
         while(i < (mok.length-1))
         {
 
-            if(mok[i+tvarka2].getKlase() < mok[i+tvarka1].getKlase())
+            if((tvarka == RusiavimoTvarka.DIDEJIMO)?(mok[i].getKlase() > mok[i+1].getKlase()):(mok[i].getKlase() < mok[i+1].getKlase()))
             {
                 Mokinys temp =mok[i];
                 mok[i] = mok[i+1];
@@ -64,7 +66,7 @@ public class U_5_1_klases {
             System.out.println("      " +  mokinys.getFullName() + "  "  + mokinys.getKlase());
         }
 
-        manoRusiavimas.sortas(mokykla);
+        manoRusiavimas.sortas(mokykla,RusiavimoTvarka.MAZEJIMO);
 
         System.out.println("****************************************************");
         System.out.println("Su 3 užsiėmime sudarytu rušiavimo algoritmu pagal \"klase\" kintamajį, mažėjimo tvarka: ");
