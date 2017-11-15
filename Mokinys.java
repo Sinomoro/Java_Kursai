@@ -1,6 +1,6 @@
 public class Mokinys extends Zmogus implements Comparable<Mokinys> {
     private int klase;
-    private int[] pazymiai = new int[20];
+   public int[] trimestras ;
 
     Mokinys () {}
 
@@ -9,6 +9,14 @@ public class Mokinys extends Zmogus implements Comparable<Mokinys> {
         super(vardas,pavarde);
         this.klase = klase;
     }
+
+    Mokinys (String vardas, String pavarde, int klase, int[] pazymiai)
+    {
+        super(vardas,pavarde);
+        this.klase = klase;
+        this.trimestras = pazymiai;
+    }
+
 
     public int getKlase()
     {
@@ -22,10 +30,8 @@ public class Mokinys extends Zmogus implements Comparable<Mokinys> {
          */
         int last = this.getSurname().compareTo(au.getSurname());
         last = (last == 0) ? (this.getName().compareTo(au.getName())) :(last);
-        if(last == 0)
-        {
-            last =  au.klase - this.klase;
-        }
+        last = (last == 0) ? (au.klase - this.klase) :(last);// taisyt sita vieta
         return last;
     }
+
 }

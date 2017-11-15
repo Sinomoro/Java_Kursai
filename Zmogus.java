@@ -18,4 +18,7 @@ public class Zmogus {
     {
         return this.pavarde;
     }
+
+    public void setName(String newName) {this.vardas = newName;}
+    public void setSurname(String newSurname){this.pavarde = newSurname;}
 }
