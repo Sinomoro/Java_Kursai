@@ -1,37 +1,44 @@
-public class Mokinys extends Zmogus implements Comparable<Mokinys> {
-    private int klase;
-   public int[] trimestras ;
+public class Mokinys extends Zmogus {
+    private int classNumber;
+
+    public enum enum_priority
+    {
+        NAME,
+        SURNAME,
+        CLASS,
+    }
 
     Mokinys () {}
 
     Mokinys (String vardas, String pavarde, int klase)
     {
         super(vardas,pavarde);
-        this.klase = klase;
+        this.classNumber = klase;
     }
 
-    Mokinys (String vardas, String pavarde, int klase, int[] pazymiai)
+
+    public int getClassNumber()
     {
-        super(vardas,pavarde);
-        this.klase = klase;
-        this.trimestras = pazymiai;
+        return classNumber;
     }
 
-
-    public int getKlase()
+    public int compare(Mokinys mokinys,enum_priority compareBy)
     {
-        return klase;
+        int res =0;
+        switch (compareBy)
+        {
+            case NAME:
+                res = this.getName().compareTo(mokinys.getName());
+                break;
+            case SURNAME:
+                res = this.getSurname().compareTo(mokinys.getSurname());
+                break;
+            case CLASS:
+                res = this.getClassNumber() -mokinys.getClassNumber();
+                break;
+        }
+        return res;
     }
 
-    public int compareTo(Mokinys au){
-        /*
-         šio metodo kodas buvo rastas interneto psl :https://beginnersbook.com/2013/12/java-arraylist-of-object-sort-example-comparable-and-comparator/
-        ir pritaikys turimai užduočiai
-         */
-        int last = this.getSurname().compareTo(au.getSurname());
-        last = (last == 0) ? (this.getName().compareTo(au.getName())) :(last);
-        last = (last == 0) ? (au.klase - this.klase) :(last);// taisyt sita vieta
-        return last;
-    }
 
 }
