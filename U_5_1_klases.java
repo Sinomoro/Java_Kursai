@@ -9,15 +9,16 @@ public class U_5_1_klases {
         MAZEJIMO
     }
 
-    public void sortas (Mokinys[] mok,  RusiavimoTvarka tvarka)
+    public void sortasKlase (Mokinys[] mok,  RusiavimoTvarka tvarka)
     {
-        //TODO optimizuoti rušiavimo tvarkos nustatymą.
+        //TODO apvalyt koda.
 
         int i=0;
         while(i < (mok.length-1))
         {
-
-            if((tvarka == RusiavimoTvarka.DIDEJIMO)?(mok[i].getKlase() > mok[i+1].getKlase()):(mok[i].getKlase() < mok[i+1].getKlase()))
+            //if((tvarka == RusiavimoTvarka.DIDEJIMO)?(mok[i].getKlase() > mok[i+1].getKlase()):(mok[i].getKlase() < mok[i+1].getKlase()))
+            //if (mok[i].compareTo(mok[i+1])>0)
+            if((tvarka == RusiavimoTvarka.DIDEJIMO)?(mok[i].compareTo(mok[i+1])>0):(mok[i].compareTo(mok[i+1])<0))
             {
                 Mokinys temp =mok[i];
                 mok[i] = mok[i+1];
@@ -66,7 +67,7 @@ public class U_5_1_klases {
             System.out.println("      " +  mokinys.getFullName() + "  "  + mokinys.getKlase());
         }
 
-        manoRusiavimas.sortas(mokykla,RusiavimoTvarka.MAZEJIMO);
+        manoRusiavimas.sortasKlase(mokykla,RusiavimoTvarka.MAZEJIMO);
 
         System.out.println("****************************************************");
         System.out.println("Su 3 užsiėmime sudarytu rušiavimo algoritmu pagal \"klase\" kintamajį, mažėjimo tvarka: ");
@@ -74,7 +75,6 @@ public class U_5_1_klases {
         {
             System.out.println("      " +  mokinys.getFullName() + "  "  + mokinys.getKlase());
         }
-
 
     }
 }
