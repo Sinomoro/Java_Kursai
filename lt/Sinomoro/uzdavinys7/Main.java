@@ -27,6 +27,7 @@ public class Main {
         mokykla[18] = new Mokinys("Petras","Jonaitis",8,new int[]{5,1,1});
         mokykla[19] = new Mokinys("Antanas","Antanaitis",8,new int[]{10,10,10});
 
+
         double[] vidurkiai = new double[12];
 
         for(Mokinys mokinys:mokykla)
@@ -40,7 +41,15 @@ public class Main {
                 vidurkiai[i] /= Mokinys.getClassCount(i);
             }
         }
+        for(int i = 0; i<12 ; i++)
+        {
+            System.out.println("Klases  " + (1+i) + " Vidurkis yra :  " + vidurkiai[i]);
+        }
 
+        // 7.2 uzduoties dalis
+        System.out.println("***************************************************");
+        System.out.println("          Klases vidurkiai mazejimo tvarka");
+        System.out.println("***************************************************");
         MyUtility.printSortedDouble(vidurkiai,0,10);
 
     }

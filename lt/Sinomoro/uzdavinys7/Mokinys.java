@@ -33,9 +33,9 @@ public class Mokinys extends Zmogus {
 
     public void setClassNumber(int classNumber)
     {
-        classCount[this.classNumber]--;
+        classCount[this.classNumber-1]--;
         this.classNumber = classNumber;
-        classCount[this.classNumber]++;
+        classCount[this.classNumber-1]++;
     }
 
     public static int getClassCount(int classNumber)
