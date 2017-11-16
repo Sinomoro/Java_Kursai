@@ -1,42 +1,42 @@
 package lt.Sinomoro.Uzdavinys6;
 
 public class Mokinys extends Zmogus {
-    private int klase;
-    private int[] trimestras ;
-    private double avrage;
+    private int classNumber;
+    private int[] trimester;
+    private double average;
 
     public enum enum_priority
     {
         NAME,
         SURNAME,
         CLASS,
-        AVARAGE
+        AVERAGE
     }
 
     Mokinys () {}
 
-    Mokinys (String vardas, String pavarde, int klase)
+    Mokinys (String vardas, String pavarde, int classNumber)
     {
         super(vardas,pavarde);
-        this.klase = klase;
+        this.classNumber = classNumber;
     }
 
-    Mokinys (String vardas, String pavarde, int klase, int[] pazymiai)
+    Mokinys (String vardas, String pavarde, int classNumber, int[] grades)
     {
         super(vardas,pavarde);
-        this.klase = klase;
-        this.trimestras = pazymiai;
+        this.classNumber = classNumber;
+        this.trimester = grades;
     }
 
     public void calculateAVG()
     {
         int sum = 0;
-        for(int pazimys:this.trimestras)
+        for(int grade:this.trimester)
         {
-            sum+=pazimys;
+            sum+=grade;
         }
 
-        this.avrage = (double)sum/this.trimestras.length;
+        this.average = (double)sum/this.trimester.length;
     }
 
     public int compare(Mokinys mokinys,enum_priority compareBy)
@@ -53,12 +53,12 @@ public class Mokinys extends Zmogus {
             case CLASS:
                 res = this.getClassNumber() -mokinys.getClassNumber();
                 break;
-            case AVARAGE:
-                if(this.getAvrage() == mokinys.getAvrage())
+            case AVERAGE:
+                if(this.getAverage() == mokinys.getAverage())
                 {
                     res = 0;
                 }
-                else if ((this.getAvrage() - mokinys.getAvrage())>0)
+                else if ((this.getAverage() - mokinys.getAverage())>0)
                 {
                     res = 1;
                 }
@@ -71,15 +71,19 @@ public class Mokinys extends Zmogus {
         return res;
     }
 
-    public int getClassNumber()
-    {
-        return klase;
+    public void setClassNumber(int classNumber) {
+        this.classNumber = classNumber;
     }
 
-    public double getAvrage()
+    public int getClassNumber()
+    {
+        return classNumber;
+    }
+
+    public double getAverage()
     {
         this.calculateAVG();
-        return avrage;
+        return average;
     }
 
 }

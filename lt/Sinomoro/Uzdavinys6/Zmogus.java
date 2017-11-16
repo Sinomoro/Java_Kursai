@@ -1,26 +1,26 @@
 package lt.Sinomoro.Uzdavinys6;
 
 public class Zmogus {
-    private String vardas;
-    private String pavarde;
+    private String name;
+    private String surname;
 
     Zmogus (){}
-    Zmogus (String vardas, String pavarde)
+    Zmogus (String name, String surname)
     {
-        this.vardas = vardas;
-        this.pavarde = pavarde;
+        this.name = name;
+        this.surname = surname;
     }
 
     public String getFullName()
     {
-        return this.vardas + " " +this.pavarde;
+        return this.name + " " +this.surname;
     }
-    public String getName() {return this.vardas; }
+    public String getName() {return this.name; }
     public String getSurname()
     {
-        return this.pavarde;
+        return this.surname;
     }
 
-    public void setName(String newName) {this.vardas = newName;}
-    public void setSurname(String newSurname){this.pavarde = newSurname;}
+    public void setName(String newName) {this.name = newName;}
+    public void setSurname(String newSurname){this.surname = newSurname;}
 }

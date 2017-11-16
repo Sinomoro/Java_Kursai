@@ -4,13 +4,13 @@ public class Main {
 
     private enum enum_rusiavimoTvarka
     {
-        DIDEJIMO,
-        MAZEJIMO
+        ASCENDING_ORDER,
+        DESCENDING_ORDER
     }
 
     public void sort(Mokinys[] sarasas)
     {
-        this.sort(sarasas,Mokinys.enum_priority.NAME, Mokinys.enum_priority.SURNAME, Mokinys.enum_priority.CLASS, enum_rusiavimoTvarka.DIDEJIMO);
+        this.sort(sarasas,Mokinys.enum_priority.NAME, Mokinys.enum_priority.SURNAME, Mokinys.enum_priority.CLASS, enum_rusiavimoTvarka.ASCENDING_ORDER);
     }
 
     public void sort(Mokinys[] sarasas, Mokinys.enum_priority first, Mokinys.enum_priority second, Mokinys.enum_priority third,enum_rusiavimoTvarka tvarka)
@@ -18,22 +18,22 @@ public class Main {
         int i=0;
         while(i < (sarasas.length-1))
         {
-            int skirtumas;
-            boolean flag ;
-            skirtumas = sarasas[i].compare(sarasas[i+1],first);
-            skirtumas = (skirtumas == 0)?(sarasas[i].compare(sarasas[i+1],second)):(skirtumas);
-            skirtumas = (skirtumas == 0)?(sarasas[i].compare(sarasas[i+1],third)):(skirtumas);
+            int diffrence;
+            boolean swapArrayMembers_flag ;
+            diffrence = sarasas[i].compare(sarasas[i+1],first);
+            diffrence = (diffrence == 0)?(sarasas[i].compare(sarasas[i+1],second)):(diffrence);
+            diffrence = (diffrence == 0)?(sarasas[i].compare(sarasas[i+1],third)):(diffrence);
 
-            if (tvarka == enum_rusiavimoTvarka.MAZEJIMO)
+            if (tvarka == enum_rusiavimoTvarka.DESCENDING_ORDER)
             {
-                flag = skirtumas<0;
+                swapArrayMembers_flag = diffrence<0;
             }
             else
             {
-                flag = skirtumas>0;
+                swapArrayMembers_flag = diffrence>0;
             }
 
-            if(flag)
+            if(swapArrayMembers_flag)
             {
                 Mokinys temp =sarasas[i];
                 sarasas[i] = sarasas[i+1];
@@ -66,7 +66,7 @@ public class Main {
         mokykla[2] = new Mokinys("Antanas","Jonaitis",11,new int[]{10,10,10});
         mokykla[3] = new Mokinys("Antanas","Petraitis",12,new int[]{7,8,9});
         mokykla[4] = new Mokinys("Petras","Antanaitis",12,new int[]{8,5,8});
-        mokykla[5] = new Mokinys("Jonas","Antanaitis",11,new int[]{1,5,6});
+        mokykla[5] = new Mokinys("Jonas","Antanaitis",11,new int[]{10,10,10});
         mokykla[6] = new Mokinys("Jonas","Jontinaitis",10,new int[]{9,5,4});
         mokykla[7] = new Mokinys("Petras","Petraitis",12,new int[]{9,4,1});
         mokykla[8] = new Mokinys("Petras","Jonaitis",11,new int[]{5,1,1});
@@ -77,11 +77,11 @@ public class Main {
             mokinys.calculateAVG();
         }
 
-        test.sort(mokykla, Mokinys.enum_priority.AVARAGE, Mokinys.enum_priority.SURNAME, Mokinys.enum_priority.NAME, enum_rusiavimoTvarka.MAZEJIMO);
+        test.sort(mokykla, Mokinys.enum_priority.AVERAGE, Mokinys.enum_priority.SURNAME, Mokinys.enum_priority.NAME, enum_rusiavimoTvarka.DESCENDING_ORDER);
 
         for(Mokinys mokinys:mokykla)
         {
-            System.out.println("      " +  mokinys.getFullName() + "  "  + mokinys.getClassNumber()+ "  " +mokinys.getAvrage());
+            System.out.println("      " +  mokinys.getFullName() + "  "  + mokinys.getClassNumber()+ "  " +mokinys.getAverage());
         }
     }
 }
