@@ -4,17 +4,8 @@ public class Mokinys extends Zmogus {
     private int classNumber;
     private int[] trimester;
     private double average;
-    private static int[] classCount = new int[12];
+    private static int[] classCount = new int[12];// nurodo kiek mokinių yra kiekvienoje klasėje
 
-    public enum enum_priority
-    {
-        NAME,
-        SURNAME,
-        CLASS,
-        AVERAGE
-    }
-
-    //Mokinys () {}
 
     Mokinys (String vardas, String pavarde, int classNumber)
     {
@@ -40,43 +31,11 @@ public class Mokinys extends Zmogus {
         this.average = (double)sum/this.trimester.length;
     }
 
-    public int compare(Mokinys mokinys, enum_priority compareBy)
-    {
-        int res =0;
-        switch (compareBy)
-        {
-            case NAME:
-                res = this.getName().compareTo(mokinys.getName());
-                break;
-            case SURNAME:
-                res = this.getSurname().compareTo(mokinys.getSurname());
-                break;
-            case CLASS:
-                res = this.getClassNumber() -mokinys.getClassNumber();
-                break;
-            case AVERAGE:
-                if(this.getAverage() == mokinys.getAverage())
-                {
-                    res = 0;
-                }
-                else if ((this.getAverage() - mokinys.getAverage())>0)
-                {
-                    res = 1;
-                }
-                else
-                {
-                    res = -1;
-                }
-                break;
-        }
-        return res;
-    }
-
     public void setClassNumber(int classNumber)
     {
-        classCount[this.classNumber] --;
+        classCount[this.classNumber]--;
         this.classNumber = classNumber;
-        classCount[this.classNumber] ++;
+        classCount[this.classNumber]++;
     }
 
     public static int getClassCount(int classNumber)
