@@ -11,7 +11,7 @@ public class Main {
         mokykla[2] = new Mokinys("Antanas","Jonaitis",3,new int[]{10,10,10});
         mokykla[3] = new Mokinys("Antanas","Petraitis",3,new int[]{7,8,9});
         mokykla[4] = new Mokinys("Petras","Antanaitis",4,new int[]{8,5,8});
-        mokykla[5] = new Mokinys("Jonas","Antanaitis",11,new int[]{10,10,10});
+        mokykla[5] = new Mokinys("Jonas","Antanaitis",1,new int[]{10,10,10});
         mokykla[6] = new Mokinys("Jonas","Jontinaitis",5,new int[]{9,5,4});
         mokykla[7] = new Mokinys("Petras","Petraitis",6,new int[]{9,4,1});
         mokykla[8] = new Mokinys("Petras","Jonaitis",8,new int[]{5,1,1});
@@ -50,7 +50,7 @@ public class Main {
         System.out.println("***************************************************");
         System.out.println("          Klases vidurkiai mazejimo tvarka");
         System.out.println("***************************************************");
-        MyUtility.printSortedDouble(vidurkiai,0,10);
+        MyUtility.printSortedDouble(vidurkiai,0,10, MyUtility.enum_SortOrder.DESCENDING);
 
     }
 }
