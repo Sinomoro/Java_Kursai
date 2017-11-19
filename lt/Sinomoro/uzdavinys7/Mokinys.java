@@ -1,5 +1,10 @@
 package lt.Sinomoro.uzdavinys7;
 
+/*
+* Javos klasę "Mokinys" papildžiau classCount masyvu, kuris atsakingas už mokinių skaičiaus kiekvienoje klasėje laikymą.
+*  classCount masyvo kiekvienas elementas atspindi atskirą klasę [klasės numeris - 1] principu, todėl 11 klasė laikoma 10 masyvo elemente.
+*  Beto papildžiau metodą setClassNumber, kuris atsakingas už mokinio klasės keitimą. Šis metodas buvo papildytas tam, kad atitinkamai saveikautų su classCoutn masyvu, mokinio klasės keitimo metu.
+ */
 public class Mokinys extends Zmogus {
     private int classNumber;
     private int[] trimester;

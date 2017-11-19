@@ -8,10 +8,16 @@ public class MyUtility {
         ASCENDING
     }
     //7.2 uzduotyje metodas naudojamas taip
-    //   MyUtility.printSortedDouble(vidurkiai,0,10);
-    // vidurkiai kintamasis yra 7.1 uzduotyje apskai2iuoti vidurkiai
+    // MyUtility.printSortedDouble(vidurkiai,0,10, MyUtility.enum_SortOrder.DESCENDING);
+    // vidurkiai kintamasis yra 7.1 uzduotyje apskaičiuoti vidurkiai
 
 
+    /*
+     * Šis metodas tiesiogiai nerūšiuoja masyvo, tiktai atitinakma tvarka spausdina masyvo elementus.
+     * Toks metodas buvo pasirinktas, nes 7,2 uzduotyje rūsiuojamas masyvas remesi masyvo elemento numeriu kaip klasės numerio reprezentacija.
+     * Beto toks metodas gali būti universalesnis, ir panaudotas ateityje kituose projektuose.
+     *
+     */
     public static void printSortedDouble(double[] array, double min, double max, enum_SortOrder order)
     {
 
@@ -41,7 +47,7 @@ public class MyUtility {
                     temp = array[j];
                 }
             }
-            //System.out.println("Klases  " + (holder +1) + " Vidurkis : " + array[holder]);
+            //System.out.println("Klases  " + (holder +1) + " Vidurkis : " + array[holder]); //Nelygiuotas tekstas
             System.out.printf("Klases  %2d  Vidurkis : %5.2f %n", (holder +1),array[holder]);
             duplicate = holder;
             last= array[holder];

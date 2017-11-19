@@ -27,7 +27,11 @@ public class Main {
         mokykla[18] = new Mokinys("Petras","Jonaitis",8,new int[]{5,1,1});
         mokykla[19] = new Mokinys("Antanas","Antanaitis",8,new int[]{10,10,10});
 
-
+        /*
+        * Programa papildyta klasių vidurkių skaičiavimo algoritmu.
+        * Šis algoritmas nebuvo nukeliamas i atskira "pagalbine" klasę, nes jis ganėtinai apprastas ir suprantamas.
+        * Algotritmas tiesiog sudeda visų mokinių iš atitinkamų kalsių vidurkius ir poto šias sumas padalina iš atitinkamų klasių mokinių skaičiaus.
+         */
         double[] vidurkiai = new double[12];
 
         for(Mokinys mokinys:mokykla)
