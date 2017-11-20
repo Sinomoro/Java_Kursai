@@ -1,5 +1,4 @@
-import java.util.Arrays;
-import java.util.Collections;
+package lt.Sinomoro.Uzdavinys5;
 
 public class U_5_1_klases {
 
@@ -21,11 +20,11 @@ public class U_5_1_klases {
         {
             int skirtumas;
             boolean flag ;
-            skirtumas = sarasas[i].compare(sarasas[i+1],first);
-            skirtumas = (skirtumas == 0)?(sarasas[i].compare(sarasas[i+1],second)):(skirtumas);
+            skirtumas = sarasas[i].compare(sarasas[i+1],first);//.compare yra mokinio klaseje esantis methodas
+            skirtumas = (skirtumas == 0)?(sarasas[i].compare(sarasas[i+1],second)):(skirtumas);//jeigu pagal pirma kriteriju skirtumo nera ziuri antra kriteriju
             skirtumas = (skirtumas == 0)?(sarasas[i].compare(sarasas[i+1],third)):(skirtumas);
 
-            if (tvarka == enum_rusiavimoTvarka.MAZEJIMO)
+            if (tvarka == enum_rusiavimoTvarka.MAZEJIMO)//priklausomai nuo pasirinktos rusiavimo tvarkos nustatoma ar reikia apkeisti masyvo narius
             {
                 flag = skirtumas<0;
             }
@@ -34,7 +33,7 @@ public class U_5_1_klases {
                 flag = skirtumas>0;
             }
 
-            if(flag)
+            if(flag)// jeigu atitinka kriteriju masyvo elementai apsikeicia vietomis
             {
                 Mokinys temp =sarasas[i];
                 sarasas[i] = sarasas[i+1];

@@ -1,3 +1,5 @@
+package lt.Sinomoro.Uzdavinys5;
+
 public class Mokinys extends Zmogus {
     private int classNumber;
 

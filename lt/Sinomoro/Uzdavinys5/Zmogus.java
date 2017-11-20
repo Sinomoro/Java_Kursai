@@ -1,3 +1,5 @@
+package lt.Sinomoro.Uzdavinys5;
+
 public class Zmogus {
     private String vardas;
     private String pavarde;
