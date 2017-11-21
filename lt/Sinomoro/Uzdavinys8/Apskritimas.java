@@ -1,6 +1,8 @@
 package lt.Sinomoro.Uzdavinys8;
 
 public class Apskritimas extends Figura {
+
+    Apskritimas (){setName("Apskritimas");}
     @Override
     public double calcPerimeter(double surface) {
         double radius = Math.sqrt(surface/Math.PI);

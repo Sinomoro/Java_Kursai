@@ -1,6 +1,8 @@
 package lt.Sinomoro.Uzdavinys8;
 
 public class Trikampis extends Figura {
+
+    Trikampis (){setName("Trikampis");}
     @Override
     public double calcPerimeter(double surface) {
         double side = Math.sqrt(4*surface/Math.sqrt(3));
