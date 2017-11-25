@@ -65,7 +65,9 @@ public class Main {
     public static void main(String[] args)
     {
         Map <String,Set<Zmogus>> sarasas = new TreeMap<>();// vietoj set gal reiktu naudoti irgi map su pilnu vardu, ar gimimo metais, ar kokiais nors kitais dupmenimis kaip raktu.
-/*
+
+        //Paprastasis methodas
+        /*
         addPerson(new Zmogus("Antanas","Jonaitis","2514"),sarasas);
         addPerson(new Zmogus("Antanas","Lukaitis","2582"),sarasas);
         addPerson(new Zmogus("Jonas","Jonaitis","4564"),sarasas);
@@ -97,7 +99,7 @@ public class Main {
         {
             System.out.print(">");
             String input = sc.nextLine();
-            String[] command = input.split(" ");
+            String[] command = input.split("\\s+");
             for (String i:command )
             {
                 i = i.trim();
@@ -115,7 +117,7 @@ public class Main {
                     }
                     break;
                 case "getPerson":
-                    if(command.length == 2)// TODO check if @SSC contains only numbers
+                    if(command.length == 2)
                     {
                         getPerson(command[1],sarasas);
                     }
