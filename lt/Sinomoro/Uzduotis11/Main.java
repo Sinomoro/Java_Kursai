@@ -13,17 +13,6 @@ public class Main {
         if(map.containsKey(zmogus.getasmensKodas()))
         {
             Set<Zmogus> temp = map.get(zmogus.getasmensKodas());
-            //Neveikia kazkodel, reikia pasigilint i contains veikima su objektais
-            /*if(temp.contains(zmogus))
-            {
-                System.out.println("Žmogus su tokiais duomenimis jau egzistuoja!");
-                return false;
-            }
-            else
-            {
-                temp.add(zmogus);
-                return true;
-            }*/
             temp.add(zmogus);
             return true;
         }

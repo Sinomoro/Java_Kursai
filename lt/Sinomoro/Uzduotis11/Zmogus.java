@@ -27,7 +27,7 @@ public class Zmogus {
         return this.asmensKodas;
     }
 
-    public void setAsmensKodas(String newAsmensKodas) {this.vardas = newAsmensKodas;}
+    public void setAsmensKodas(String newAsmensKodas) {this.asmensKodas = newAsmensKodas;}
     public void setName(String newName) {this.vardas = newName;}
     public void setSurname(String newSurname){this.pavarde = newSurname;}
 }
