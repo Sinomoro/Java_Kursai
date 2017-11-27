@@ -2,9 +2,7 @@ package lt.Sinomoro.Uzduotis11;
 
 import java.util.*;
 
-/*TODO: galima deti visiskai identikus pakartotinius irasus, to neturetu buti galima daryti.
-*
-*/
+
 
 public class Main {
 
@@ -96,7 +94,7 @@ public class Main {
             switch(command[0])
             {
                 case "addPerson":
-                    if(command.length == 4)// TODO check if @SSC contains only numbers
+                    if(command.length == 4)
                     {
                         addPerson(new Zmogus(command[1],command[2],command[3]),sarasas);
                     }
@@ -116,7 +114,7 @@ public class Main {
                     }
                     break;
                 case "getAll":
-                    if(command.length == 1)// TODO check if @SSC contains only numbers
+                    if(command.length == 1)
                     {
                         getAll(sarasas);
                     }

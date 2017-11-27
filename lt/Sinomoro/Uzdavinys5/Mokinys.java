@@ -38,6 +38,8 @@ public class Mokinys extends Zmogus {
             case CLASS:
                 res = this.getClassNumber() -mokinys.getClassNumber();
                 break;
+            default:
+                res = 0;
         }
         return res;
     }
