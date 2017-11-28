@@ -2,10 +2,10 @@ package lt.Sinomoro.Uzduotis12;
 
 public class Employee {
 
-    String name;
-    Address address;
+    private String name;
+    private Address address;
 
-    static public class Address
+    private static class Address
     {
         String city;
         String address;
@@ -16,5 +16,9 @@ public class Employee {
         this.address = new Employee.Address();
         this.address.city = city;
         this.address.address = address;
+    }
+    public String getCity()
+    {
+        return this.address.city;
     }
 }

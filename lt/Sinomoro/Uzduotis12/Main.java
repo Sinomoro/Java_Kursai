@@ -18,12 +18,12 @@ public class Main {
         sarasas.add(new Employee("Gertruda","Alytus","Studentu g. 6"));
         sarasas.add(new Employee("Remigijus","Prienai","Sporto g. 8"));
         sarasas.add(new Employee("Juste","Klaipeda","Stadiono g. 9"));
-        sarasas.add(new Employee("Gintare","Vilnius","Veiveriu g. 15"));
+        sarasas.add(new Employee("Gintare","Marijampole","Veiveriu g. 15"));
 
         Set<String> miestuSarasas = new HashSet<>();
         for (Employee i:sarasas)
         {
-            miestuSarasas.add(i.address.city);
+            miestuSarasas.add(i.getCity());
         }
 
         System.out.println(miestuSarasas.size());
