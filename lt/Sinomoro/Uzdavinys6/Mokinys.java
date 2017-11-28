@@ -67,6 +67,8 @@ public class Mokinys extends Zmogus {
                     res = -1;
                 }
                 break;
+            default:
+                res = 0;
         }
         return res;
     }

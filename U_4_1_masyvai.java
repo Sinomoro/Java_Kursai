@@ -1,3 +1,5 @@
+import java.util.List;
+
 public class U_4_1_masyvai {
     public static void main(String[] arg)
     {
@@ -20,6 +22,7 @@ public class U_4_1_masyvai {
         double avg2= (double)sum2/b.length;
 
         System.out.println(avg1-avg2);
+
     }
 
 }
