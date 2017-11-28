@@ -11,8 +11,19 @@ public class Main {
         if(map.containsKey(zmogus.getasmensKodas()))
         {
             Set<Zmogus> temp = map.get(zmogus.getasmensKodas());
-            temp.add(zmogus);
-            return true;
+
+            if(temp.contains(zmogus))
+            {
+                System.out.println("Zmogus su tokiais duomenismis jau egzistuoja!");
+                return false;
+            }
+            else
+            {
+                temp.add(zmogus);
+                return true;
+            }
+            //temp.add(zmogus);
+            //return true;
         }
         else
         {
