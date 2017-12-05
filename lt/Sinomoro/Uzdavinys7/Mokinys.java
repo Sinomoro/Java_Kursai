@@ -1,4 +1,4 @@
-package lt.Sinomoro.uzdavinys7;
+package lt.Sinomoro.Uzdavinys7;
 
 /*
 * Javos klasę "Mokinys" papildžiau classCount masyvu, kuris atsakingas už mokinių skaičiaus kiekvienoje klasėje laikymą.

@@ -1,4 +1,4 @@
-package lt.Sinomoro.uzdavinys7;
+package lt.Sinomoro.Uzdavinys7;
 
 public class MyUtility {
 
