@@ -1,3 +1,5 @@
+package lt.Sinomoro.Uzdavinys3;
+
 public class U_3_1_Trikampiai
 {
     static final int[][] ilgiai = {{3,4,5},{2,10,8},{5,6,5},{5,5,5}};

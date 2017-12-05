@@ -1,3 +1,5 @@
+package lt.Sinomoro.Uzdavinys3;
+
 public class U_3_2_Plotai extends U_3_1_Trikampiai
 {
     private void trikampioPlotas(int m)

@@ -1,3 +1,5 @@
+package lt.Sinomoro.Uzdavinys4;
+
 public class U_4_2_Tobuli_sk {
     public static void main (String[]  args)
     {

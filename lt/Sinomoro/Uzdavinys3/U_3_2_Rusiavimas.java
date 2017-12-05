@@ -1,3 +1,5 @@
+package lt.Sinomoro.Uzdavinys3;
+
 public class U_3_2_Rusiavimas
 {
     public static void main (String[] args)

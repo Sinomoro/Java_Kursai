@@ -1,3 +1,5 @@
+package lt.Sinomoro.Uzdavinys4;
+
 import java.util.List;
 
 public class U_4_1_masyvai {
