@@ -1,4 +1,4 @@
-package lt.Sinomoro.Uzdavinys10;
+package lt.Sinomoro.Uzduotis10;
 
 import java.math.BigDecimal;
 import java.math.RoundingMode;

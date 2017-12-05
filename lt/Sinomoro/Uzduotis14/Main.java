@@ -1,4 +1,4 @@
-package lt.Sinomoro.Uzdavinys14;
+package lt.Sinomoro.Uzduotis14;
 
 
 public class Main {
