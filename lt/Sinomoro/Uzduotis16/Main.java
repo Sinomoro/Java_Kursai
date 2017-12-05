@@ -19,11 +19,11 @@ public class Main {
         vokeliuSarasas.add(new Salary(new Employee("Lukas",500.00)));
         vokeliuSarasas.add(new Salary(new Employee("Jomas",520.00)));
         vokeliuSarasas.add(new Salary(new Employee("Donas", 900)));
-        vokeliuSarasas.add(new Salary(new Employee("Konas",550.00)));
+        vokeliuSarasas.add(new Salary(new Employee("Donas",550.00)));
         vokeliuSarasas.add(new Salary(new Employee("Polas",100.00)));
-        vokeliuSarasas.add(new Salary(new Employee("Nolas",320.00)));
+        vokeliuSarasas.add(new Salary(new Employee("Golas",320.00)));
         vokeliuSarasas.add(new Salary(new Employee("Donas",700.00)));
-        vokeliuSarasas.add(new Salary(new Employee("Ponas",120.00)));
+        vokeliuSarasas.add(new Salary(new Employee("Polas",120.00)));
         vokeliuSarasas.add(new Salary(new Employee("Polas",390.00)));
         vokeliuSarasas.add(new Salary(new Employee("Donas",1200.00)));
         vokeliuSarasas.add(new Salary(new Employee("Golas",650.00)));
