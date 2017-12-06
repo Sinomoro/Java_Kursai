@@ -5,7 +5,7 @@ import java.time.LocalDate;
 
 public class SaskaitaFK {
 
-    LocalDate data;
+    private LocalDate data;
     private BigDecimal suma;
     private String klientas;
 
@@ -48,8 +48,23 @@ public class SaskaitaFK {
         return data;
     }
 
-    public String getQuarter()
+    public int getQuarter()
     {
-        return"Q" + ((data.getMonth().getValue()-1)/3 +1);
+        return ((data.getMonth().getValue()-1)/3 +1);
+    }
+
+    public String getKetvirtis()
+    {
+        return"" + ((data.getMonth().getValue()-1)/3 +1) + " Ketvirtis";
+    }
+
+    public int getYear()
+    {
+        return (this.data.getYear());
+    }
+
+    int getMonth()
+    {
+        return this. data.getMonth().getValue();
     }
 }
