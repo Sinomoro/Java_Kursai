@@ -4,7 +4,7 @@ package lt.Sinomoro.Uzduotis14;
 public class Main {
     public static void main (String[] args)
     {
-        Saugykla<String> container = new Saugykla<>(Saugykla.ENUM_iteratorOrder.ASCENDING);
+        Saugykla<String> container = new Saugykla<>();
 
         container.add("Labas1");
         container.add("Labas2");
@@ -17,16 +17,14 @@ public class Main {
         container.add("Labas9");
         container.add("Labas10");
 
-        while(container.isThereMore())
+        for (String element:container)
         {
-            System.out.println("Narys " + container.Pull());
+            System.out.println(element);
         }
-        container.setOrder(Saugykla.ENUM_iteratorOrder.DESCENDING);
-        while(container.isThereMore())
+        System.out.println("*********************************");
+        for (String element: container.reverseIterator)
         {
-            System.out.println("Narys " + container.Pull());
+            System.out.println(element);
         }
-
-
     }
 }

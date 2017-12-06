@@ -1,80 +1,49 @@
 package lt.Sinomoro.Uzduotis14;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
-import java.util.ListIterator;
 
-public class Saugykla<E> {
+public class Saugykla<E> implements Iterable<E> {
 
-    enum ENUM_iteratorOrder {ASCENDING,DESCENDING};
-    List<E> sarasas = new ArrayList<>();
-    ListIterator<E> iterator = sarasas.listIterator();
-    ENUM_iteratorOrder iteratorOrder ;
-    boolean flag_ListChanged = false;
+   private List<E> sarasas = new ArrayList<>();
 
+    ReverseOrder reverseIterator = new ReverseOrder();
 
-
-    Saugykla(ENUM_iteratorOrder ordering)
-    {
-        iteratorOrder = ordering;
-        resetIterator();
-    }
-
-    boolean isThereMore()
-    {
-        if (flag_ListChanged)
-        {
-            resetIterator();
-            flag_ListChanged = false;
-        }
-        if (iteratorOrder == ENUM_iteratorOrder.ASCENDING)
-        {
-            return iterator.hasNext();
-        }
-        else
-        {
-            return iterator.hasPrevious();
-        }
-    }
-
-    void resetIterator()
-    {
-        if (iteratorOrder == ENUM_iteratorOrder.ASCENDING)
-        {
-           iterator = sarasas.listIterator();
-        }
-        else
-        {
-            iterator = sarasas.listIterator();
-            while(iterator.hasNext())
-            {
-                iterator.next();
-            }
-        }
-    }
-
-    E Pull()
-    {
-        if(isThereMore()) {
-            if (iteratorOrder == ENUM_iteratorOrder.ASCENDING) {
-                return iterator.next();
-            } else {
-                return iterator.previous();
-            }
-        }
-        else {
-            return null;
-        }
-    }
-    void add(E element)
+    public void add(E element)
     {
         sarasas.add(element);
-        flag_ListChanged = true;
     }
 
-    void setOrder(ENUM_iteratorOrder order)
-    {
-        iteratorOrder = order;
-        //flag_ListChanged = true;
+    @Override
+    public Iterator<E> iterator() {
+        return sarasas.iterator();
     }
+
+    public class ReverseOrder  implements Iterable<E>
+    {
+        int cursor =0;
+
+        @Override
+        public Iterator<E> iterator() {
+
+            cursor =sarasas.size()-1;
+
+            return new Iterator<>() {
+                @Override
+                public boolean hasNext() {
+                    return cursor >= 0;
+                }
+
+                @Override
+                public E next() {
+                    return sarasas.get(cursor--);
+                }
+            };
+        }
+
+
+
+    }
+
 }
