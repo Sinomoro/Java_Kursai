@@ -6,7 +6,7 @@ import java.util.List;
 
 public class Saugykla<E> implements Iterable<E> {
 
-   private List<E> sarasas = new ArrayList<>();
+    private List<E> sarasas = new ArrayList<>();
 
     ReverseOrder reverseIterator = new ReverseOrder();
 
@@ -29,7 +29,7 @@ public class Saugykla<E> implements Iterable<E> {
 
             cursor =sarasas.size()-1;
 
-            return new Iterator<>() {
+            return new Iterator<E>() {
                 @Override
                 public boolean hasNext() {
                     return cursor >= 0;
@@ -41,9 +41,6 @@ public class Saugykla<E> implements Iterable<E> {
                 }
             };
         }
-
-
-
     }
 
 }
