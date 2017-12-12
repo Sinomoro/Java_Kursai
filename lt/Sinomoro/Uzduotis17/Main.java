@@ -3,56 +3,27 @@ package lt.Sinomoro.Uzduotis17;
 import java.math.BigDecimal;
 import java.time.LocalDate;
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
 
 public class Main {
 
-    //reiktu dar speju papildyti metodus su 0 sumos rasymu jei ketvirtyje nieko nevyko, nes dabar net neparaso ketvircio
-
-    //grazina sarasa su bendra suma kikevienam ketvirciui.
-   static List<SaskaitaFK> getQuarterReport (List<SaskaitaFK> sarasas)
+   private static List<SaskaitaFK> getQuarterReport (List<SaskaitaFK> sarasas)
     {
-        List<SaskaitaFK> quarterReport = new ArrayList<>();
+        //gaunamas zodynas su ketvircio duomenimis ir ketvircio suma
+        Map<String,BigDecimal> tempReport = sarasas.stream()
+                .collect(Collectors.groupingBy(
+                                SaskaitaFK::getFormatedDate,
+                                Collectors.reducing(BigDecimal.ZERO, SaskaitaFK::getSuma, BigDecimal::add))
+                );
+        //gaunamas surusiuotas sarasas su ketvircio sumomis, pateikiamas SaskaitosFK formatu.
 
-                Map<Integer,Map<Integer,BigDecimal>> report = sarasas.stream()
-                .collect(Collectors.groupingBy(SaskaitaFK::getYear,Collectors.groupingBy(SaskaitaFK::getQuarter,
-                         Collectors.reducing(BigDecimal.ZERO, SaskaitaFK::getSuma, BigDecimal::add))));
-
-                for(Map.Entry<Integer,Map<Integer,BigDecimal>> metai: report.entrySet() )
-                {
-                    for(Map.Entry<Integer,BigDecimal> ketvirtis : metai.getValue().entrySet())
-                    {
-                        quarterReport.add(new SaskaitaFK(""+ metai.getKey() + "-"+ ((ketvirtis.getKey() < 4)?("0"+ketvirtis.getKey()*3 ):(ketvirtis.getKey()*3 ))+ "-01",
-                                ketvirtis.getValue()
-                                ,ketvirtis.getKey()+ " Ketvirtis"));
-                    }
-                }
-
-        return quarterReport;
-    }
-
-    //grazina sarasa su bendra kliento suma kikevienam ketvirciui.
-    static List<SaskaitaFK> getQuarterReportTest(List<SaskaitaFK> sarasas)
-    {
-        List<SaskaitaFK> quarterReport = new ArrayList<>();
-
-        Map<Integer,Map<Integer,Map<String,BigDecimal>>> report = sarasas.stream()
-                .collect(Collectors.groupingBy(SaskaitaFK::getYear,Collectors.groupingBy( SaskaitaFK::getQuarter,Collectors.groupingBy(SaskaitaFK::getKlientas,
-                        Collectors.reducing(BigDecimal.ZERO, SaskaitaFK::getSuma, BigDecimal::add)))));
-
-        for(Map.Entry<Integer,Map<Integer,Map<String,BigDecimal>>> metai: report.entrySet() ) {
-            for (Map.Entry<Integer, Map<String, BigDecimal>> ketvirtis : metai.getValue().entrySet()) {
-                for (Map.Entry<String, BigDecimal> klientas : ketvirtis.getValue().entrySet() ) {
-                    quarterReport.add(new SaskaitaFK("" + metai.getKey() + "-" + ((ketvirtis.getKey() < 4) ? ("0" + ketvirtis.getKey() * 3) : (ketvirtis.getKey() * 3)) + "-01"
-                            , klientas.getValue()
-                            , klientas.getKey() +" " + ketvirtis.getKey() + " Ketvirtis"));
-                }
-            }
-        }
-
-        return quarterReport;
+        return tempReport.entrySet().stream()
+                .sorted(Comparator.comparing(Map.Entry::getKey))
+                .map(p -> new SaskaitaFK(p.getKey(),p.getValue()))
+                .collect(Collectors.toList());
     }
 
     public static void main (String[] args)
@@ -96,32 +67,6 @@ public class Main {
         sarasas.add(new SaskaitaFK("2016-12-01","4444.4","Ona"));
         sarasas.add(new SaskaitaFK("2016-12-18","0.08","Lukas"));
         sarasas.add(new SaskaitaFK("2016-12-26","4535.12","Petras"));
-
-
-//        for(Map.Entry<Integer,Map<String,BigDecimal>> elem:getQuarterReportTest(sarasas).entrySet()) {
-//            System.out.println(elem.getKey()+" Ketvirtis");
-//            for(Map.Entry<String,BigDecimal> elementas:elem.getValue().entrySet()){
-//                System.out.println("     "+elementas.getKey() + "  " + elementas.getValue());
-//            }
-//        }
-
-        int metu_flag = 0;
-        int ketvircio_flag = 0;
-
-        for( SaskaitaFK elementas:getQuarterReportTest(sarasas)){
-            if(metu_flag != elementas.getYear())
-            {
-                metu_flag = elementas.getYear();
-                System.out.println("************ "+ elementas.getYear()+" Metai **************");
-            }
-            if(ketvircio_flag != elementas.getMonth())
-            {
-                ketvircio_flag = elementas.getMonth();
-                System.out.println("        ************ "+ elementas.getQuarter()+"Ketvirtis **************");
-            }
-            System.out.println("                " + elementas);
-        }
-        System.out.println("**************************************************");
 
         for( SaskaitaFK elementas:getQuarterReport(sarasas)){
             System.out.println(elementas);

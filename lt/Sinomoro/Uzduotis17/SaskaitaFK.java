@@ -15,22 +15,20 @@ public class SaskaitaFK {
         this.klientas = klientas;
     }
 
-    SaskaitaFK(String data, BigDecimal suma, String klientas) {
-        this.data = LocalDate.parse(data);
-        this.suma = suma;
-        this.klientas = klientas;
-    }
-
     SaskaitaFK(String data, String suma, String klientas) {
         this.data = LocalDate.parse(data);
         this.suma = new BigDecimal(suma);
         this.klientas = klientas;
     }
 
-    public String getKlientas() {
-        return klientas;
-    }
+    SaskaitaFK(String formatedDate, BigDecimal suma) {
+        int month = Integer.parseInt(formatedDate.substring(5,6))*3;
 
+
+        this.data = LocalDate.parse(formatedDate.substring(0,4) +"-"+(month<10?"0":"")+month+"-01");
+        this.suma = suma;
+        this.klientas = formatedDate;
+    }
     @Override
     public String toString() {
         return "SaskaitaFK{" +
@@ -40,31 +38,13 @@ public class SaskaitaFK {
                 '}';
     }
 
-    public BigDecimal getSuma() {
+    BigDecimal getSuma() {
         return suma;
     }
 
-    public LocalDate getData() {
-        return data;
+    String getFormatedDate()
+    {
+        return (this.data.getYear() + " " + ((data.getMonth().getValue()-1)/3 +1) + " Ketvirtis");
     }
 
-    public int getQuarter()
-    {
-        return ((data.getMonth().getValue()-1)/3 +1);
-    }
-
-    public String getKetvirtis()
-    {
-        return"" + ((data.getMonth().getValue()-1)/3 +1) + " Ketvirtis";
-    }
-
-    public int getYear()
-    {
-        return (this.data.getYear());
-    }
-
-    int getMonth()
-    {
-        return this. data.getMonth().getValue();
-    }
 }
