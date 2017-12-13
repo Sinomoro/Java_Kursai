@@ -29,16 +29,14 @@ public class Main {
             else {
                 try {
                     indexPrinter(input);
-                } catch (URISyntaxException e) {
-                    e.printStackTrace();
-                } catch (MalformedURLException e) {
+                } catch (URISyntaxException | MalformedURLException e) {
                     e.printStackTrace();
                 }
             }
         }
     }
 
-    static void indexPrinter(String address) throws URISyntaxException, MalformedURLException  {
+    private static void indexPrinter(String address) throws URISyntaxException, MalformedURLException  {
         URI uri = new URI("https",
                 "postit.lt",
                 "/data",
@@ -49,7 +47,7 @@ public class Main {
 
         URL url = uri.toURL();
         try (
-                BufferedReader in = new BufferedReader(new InputStreamReader(url.openStream(), "UTF-8"));
+                BufferedReader in = new BufferedReader(new InputStreamReader(url.openStream(), "UTF-8"))
         ) {
             Gson gson = new GsonBuilder().create();
             Indeksas indeksas = gson.fromJson(in,Indeksas.class);

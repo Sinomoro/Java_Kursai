@@ -6,7 +6,7 @@ public class Indeksas {
    private List<Data> data;
     @Override
     public String toString() {
-
+        //galima papildyti isvedimo koda, taip, kad rasytu visus surastus adresus, o ne tik pirmajy, pasinaudojus for each ciklu, bet uzduotyje to neprase
         if (data.size() > 0)
         {
             return data.get(0).city + " " + data.get(0).address + " indeksas yra : " + data.get(0).post_code;
