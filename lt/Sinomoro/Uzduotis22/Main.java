@@ -1,7 +1,7 @@
 package lt.Sinomoro.Uzduotis22;
 
-import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
+//import com.google.gson.Gson;
+//import com.google.gson.GsonBuilder;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -49,9 +49,9 @@ public class Main {
         try (
                 BufferedReader in = new BufferedReader(new InputStreamReader(url.openStream(), "UTF-8"))
         ) {
-            Gson gson = new GsonBuilder().create();
-            Indeksas indeksas = gson.fromJson(in,Indeksas.class);
-            System.out.println(indeksas);
+//            Gson gson = new GsonBuilder().create();
+//            Indeksas indeksas = gson.fromJson(in,Indeksas.class);
+//            System.out.println(indeksas);
         } catch (IOException e) {
             e.printStackTrace();
         }

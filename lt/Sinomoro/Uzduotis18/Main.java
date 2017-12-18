@@ -20,7 +20,7 @@ public class Main {
 
         for(int i =1; i<20;i++)
         {
-            System.out.println(mf.format(new Object[] {i}));
+            System.out.println(mf.format(new Object[] {i,(i<10)?("iai"):("ių")}));
         }
     }
 
