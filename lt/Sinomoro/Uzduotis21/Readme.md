@@ -1,5 +1,2 @@
-
-
-
-
-Uzduoties salyga
+Susikurkite failą su kažkokiu turiniu iš interneto (wikipedijos) ir parašykite programą, kuri išveda žodžius panaudotus tame tekste ir kiek kartų tas žodis buvo panaudotas žodžių panaudojimo mažėjimo tvarka. 
+Pastaba: didžiosios - mažosios raidės laikomos tokiomis pat, t.y. žodžiai Wikipedia ir wikipedia yra tas pats žodis
