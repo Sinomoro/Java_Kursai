@@ -5,3 +5,11 @@ java -jar Copy.jar @source @target
 example
 
 java -jar Copy.jar "E:\in" "E:\out"
+
+only works with \ style path
+
+*********************************
+TODO
+*********************************
+1.code in relative path recognition
+1.make the system work with diffrente path styles(for example / and \)
