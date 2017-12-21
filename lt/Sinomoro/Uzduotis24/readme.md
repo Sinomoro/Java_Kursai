@@ -12,4 +12,5 @@ only works with \ style path
 TODO
 *********************************
 1.code in relative path recognition
-1.make the system work with diffrente path styles(for example / and \)
+
+2.make the system work with diffrente path styles(for example / and \)
