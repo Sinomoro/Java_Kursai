@@ -19,6 +19,17 @@ public class Main {
         for (int i = 1; i < 20; i++) {
             System.out.println(mf.format(new Object[]{i}));
         }
+
+
+        Locale.setDefault(new Locale("lt", "LT"));
+        mybundle = ResourceBundle.getBundle("lt.Sinomoro.Uzduotis18.testBundle");
+
+        message = mybundle.getString("drambliai");
+        mf = new MessageFormat(message);
+
+        for (int i = 1; i < 20; i++) {
+            System.out.println(mf.format(new Object[]{i}));
+        }
     }
 }
 
